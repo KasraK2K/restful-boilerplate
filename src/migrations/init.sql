@@ -9,9 +9,9 @@
 --======================================================================================================
 
 
-CREATE DATABASE grilla;
+CREATE DATABASE apppair;
 
-GRANT ALL PRIVILEGES ON DATABASE grilla TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE apppair TO postgres;
 
 -- Extention
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

@@ -1,7 +1,7 @@
 mode: development
 
 general:
-  frontendDomain: "https://localhost:4200/#"
+  frontendDomain: "https://localhost:6100/#"
 
 application:
   host: "http://localhost"

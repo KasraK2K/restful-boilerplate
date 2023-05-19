@@ -48,9 +48,9 @@ class EmailLogic {
 
     const html = /* HTML */ `
       <p>Dear ${first_name}</p>
-      <p>${reseller_name && `<p>You have been invited to join GrillaTEQ by ${reseller_name}.`}</p>
+      <p>${reseller_name && `<p>You have been invited to join AppPair by ${reseller_name}.`}</p>
       <p>
-        Using GrillaTEQ you can check product details and upload services enquiries directly to your services
+        Using AppPairTEQ you can check product details and upload services enquiries directly to your services
         team. Download from the app store here:
       </p>
       <p>We look forward to you joining the channel services community.</p>
@@ -64,15 +64,15 @@ class EmailLogic {
       <p>Kind regards,</p>
       <br />
       <p>
-        ${reseller_name || "GrillaTech"}<br />
-        ${reseller_name && `Working with GrillaTech`}
+        ${reseller_name || "AppPair"}<br />
+        ${reseller_name && `Working with AppPair`}
       </p>
     `
 
     await mailgunJs.message
       .createMessage({
         to: [email, ...listOfAdminToResiveEmail],
-        subject: "GrillaTech",
+        subject: "AppPair",
         html,
       })
       .then((response) =>
@@ -96,9 +96,9 @@ class EmailLogic {
     mailgunJs.message
       .createMessage({
         to: [email, ...listOfAdminToResiveEmail],
-        subject: "Invite new portal user to GrillaTech",
+        subject: "Invite new portal user to AppPair",
         html: /* HTML */ `
-          <h1>GrillaTech</h1>
+          <h1>AppPair</h1>
 
           <br />
           <p>Your account created</p>
@@ -129,9 +129,9 @@ class EmailLogic {
     mailgunJs.message
       .createMessage({
         to: [email, ...listOfAdminToResiveEmail],
-        subject: "Invite new reseller to GrillaTech",
+        subject: "Invite new reseller to AppPair",
         html: /* HTML */ `
-          <h1>GrillaTech</h1>
+          <h1>AppPair</h1>
 
           <br />
           <p>Your account created</p>
@@ -162,9 +162,9 @@ class EmailLogic {
     mailgunJs.message
       .createMessage({
         to: [email, ...listOfAdminToResiveEmail],
-        subject: "Grilla Reply Feedback",
+        subject: "AppPair Reply Feedback",
         html: /* HTML */ `
-          <h1>GrillaTech</h1>
+          <h1>AppPair</h1>
 
           <br />
           <p>${body}</p>

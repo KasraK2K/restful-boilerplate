@@ -1,10 +1,10 @@
 mode: production
 
 general:
-  frontendDomain: "https://portal.grillatech.com"
+  frontendDomain: "https://portal.apppair.com"
 
 application:
-  host: "https://api.grillatech.com"
+  host: "https://api.apppair.com"
   routerVersion: "v1"
   bearer: "Bearer"
   bearerHeader: "authorization"

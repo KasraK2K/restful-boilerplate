@@ -1,10 +1,10 @@
 mode: development
 
 general:
-  frontendDomain: "https://gt-portal-dev.ukdesigncentre.com"
+  frontendDomain: "https://portal-dev.apppair.com"
 
 application:
-  host: "https://gt-api-dev.ukdesigncentre.com"
+  host: "https://api-dev.apppair.com"
   routerVersion: "v1"
   bearer: "Bearer"
   bearerHeader: "authorization"

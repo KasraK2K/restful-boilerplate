@@ -12,14 +12,14 @@
 module.exports = {
   apps: [
     {
-      name: process.env.NODE_ENV === "development" ? "api.grilla_dev" : "api.grilla_prod",
+      name: process.env.NODE_ENV === "development" ? "api.apppair_dev" : "api.apppair_prod",
       log_date_format: "YYYY-MM-DD HH:mm Z",
       script: process.env.NODE_ENV === "development" ? "src/server.ts" : "build/src/server.js",
       autorestart: true,
       watch: process.env.NODE_ENV === "development",
       // ignore_watch: ["node_modules", "logs", "public", "tmp"],
       time: true,
-      instance_var: "grilla_api",
+      instance_var: "apppair_api",
       instances: process.env.NODE_ENV === "development" ? "1" : "max",
       // exec_mode: process.env.NODE_ENV === "development" ? "fork" : "cluster",
       exec_mode: "cluster",
