@@ -50,8 +50,8 @@ database:
   postgres:
     user: "postgres"
     host: "0.0.0.0"
-    database: "apppair"
-    password: "postgres"
+    database: "AppPair"
+    password: "@ppP@!rSQlP@ssw0rd"
     port: 5432
     idleTimeoutMillis: 10000
     connectionTimeoutMillis: 10000
