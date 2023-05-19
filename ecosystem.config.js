@@ -36,7 +36,7 @@ module.exports = {
         ENCRYPTION_SECRET:
           "jVuTFhObFk0SmxkQzFyWlhrNmlNalZ1VEZoT2JGazBTbXhrUXpGeVdsaHJObVa3JObVY0c0luUlNqRmpNbF",
         API_KEY: "hRaU9qT2JGa3JObVY0c0RUwK6elovHOKema381GrHqU1oF261Q01TXg7XbtFs6Qw",
-        PORT: "4100",
+        PORT: "6100",
       },
 
       // production environment
@@ -46,7 +46,7 @@ module.exports = {
         ENCRYPTION_SECRET:
           "jVuTFhObFk0SmxkQzFyWlhrNmlNalZ1VEZoT2JGazBTbXhrUXpGeVdsaHJObVa3JObVY0c0luUlNqRmpNbF",
         API_KEY: "hRaU9qT2JGa3JObVY0c0RUwK6elovHOKema381GrHqU1oF261Q01TXg7XbtFs6Qw",
-        PORT: "4101",
+        PORT: "6101",
       },
     },
   ],
