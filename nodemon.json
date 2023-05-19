@@ -1,0 +1,6 @@
+{
+  "watch": [],
+  "ignore": ["node_modules", "build", "logs", "public", "tmp"],
+  "ext": "js,ts,html,json,pug,yml,yaml",
+  "server": "./build/index.js"
+}
