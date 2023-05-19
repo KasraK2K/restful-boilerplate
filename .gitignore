@@ -1,0 +1,17 @@
+node_modules/
+build/
+target/
+coverage/
+docs/
+out/
+.vscode/
+.idea/
+.dist/
+public/
+logs/
+
+package-lock.json
+yarn-error.log
+yarn.lock
+pnpm-lock.yaml
+.env
