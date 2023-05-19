@@ -9,7 +9,7 @@ application:
   bearer: "Bearer"
   bearerHeader: "authorization"
   apiKeyHeader: "api-key"
-  port: 4100
+  port: 6100
   information: false
   request:
     allowMethods: ["POST"]
