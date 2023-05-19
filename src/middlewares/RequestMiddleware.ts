@@ -4,7 +4,7 @@ import config from "config"
 import _ from "lodash"
 import { IApplicationConfig } from "../../config/config.interface"
 import logger from "../common/helpers/logger.helper"
-import { ServiceName } from "../common/enums/general.enum"
+import { ModuleName } from "../common/enums/general.enum"
 import { addMetaData } from "../common/helpers/addMetaData.helper"
 import tokenHelper from "../common/helpers/token.helper"
 
@@ -31,7 +31,7 @@ class RequestMiddleware extends Middleware {
       !allowMethods.includes(req.method)
     ) {
       logger.warn(`Method ${req.method} is not allowed`, {
-        service: ServiceName.DEFAULT,
+        service: ModuleName.DEFAULT,
         dest: "RequestMiddleware.ts",
       })
       return addMetaData(req, res, { errCode: 1014 })

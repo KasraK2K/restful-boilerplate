@@ -4,7 +4,7 @@ export enum Gender {
   OTHER = "OTHER",
 }
 
-export enum ServiceName {
+export enum ModuleName {
   DEFAULT = "default",
   GENERAL = "general",
   PORTAL_USER = "portal_user",

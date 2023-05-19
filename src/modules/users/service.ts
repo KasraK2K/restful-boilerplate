@@ -17,7 +17,7 @@ import BullMQ from "../../integrations/bullmq"
 import { IGeneralConfig } from "../../../config/config.interface"
 import { IDefaultArgs } from "../../common/interfaces/general.interface"
 import repository from "./repository"
-import { QueueName, ServiceName, TokenMode, TokenType } from "../../common/enums/general.enum"
+import { QueueName, ModuleName, TokenMode, TokenType } from "../../common/enums/general.enum"
 import { IUserListArgs } from "./constant/interface"
 
 const bull = new BullMQ(QueueName.NEW_USER_QUEUE)
@@ -37,7 +37,7 @@ class UserService extends Service {
       })
       .catch((err) => {
         logger.error(`Error on getting user in UserService.getEntityObject: ${err.message}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return undefined
@@ -50,7 +50,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on Service.list: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -69,7 +69,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on Service.list: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -88,7 +88,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.profile: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -118,7 +118,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.upsert: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -138,7 +138,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.profileUpdate: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -164,7 +164,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.inviteNewUser: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -212,7 +212,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.archive: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -230,7 +230,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.restore: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -248,7 +248,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.toggleIsBlocked: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -266,7 +266,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.delete: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -283,7 +283,7 @@ class UserService extends Service {
       const { valid, errors } = validator(args, schema.login)
       if (!valid) {
         logger.warn(`Validation has error on UserService.login: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -306,7 +306,7 @@ class UserService extends Service {
       const { valid, errors } = validator(args, schema.socialLogin)
       if (!valid) {
         logger.warn(`Validation has error on UserService.socialLogin: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -376,7 +376,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.refreshToken: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -404,7 +404,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.forgotPassword: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -435,7 +435,7 @@ class UserService extends Service {
             .then((response) => resolve({ data: response }))
             .catch((err) => {
               logger.error(err, {
-                service: ServiceName.USER,
+                service: ModuleName.USER,
                 dest: UserService.destination + ":forgotPassword",
               })
               return reject({ errCode: 1017 })
@@ -451,7 +451,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.resetPassword: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })
@@ -487,7 +487,7 @@ class UserService extends Service {
       })
       .catch((err) => {
         logger.error(`Error on getting user in UserService.getUserObject: ${err.message}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination + ":getUserObject",
         })
         return undefined
@@ -504,7 +504,7 @@ class UserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on UserService.signup: ${errors}`, {
-          service: ServiceName.USER,
+          service: ModuleName.USER,
           dest: UserService.destination,
         })
         return reject({ errors })

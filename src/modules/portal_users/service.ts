@@ -14,7 +14,7 @@ import BullMQ from "../../integrations/bullmq"
 import { IGeneralConfig } from "../../../config/config.interface"
 import { IDefaultArgs } from "../../common/interfaces/general.interface"
 import repository from "./repository"
-import { ServiceName, TokenType, TokenMode, QueueName } from "../../common/enums/general.enum"
+import { ModuleName, TokenType, TokenMode, QueueName } from "../../common/enums/general.enum"
 import { IPortalUserListArgs } from "./constant/interface"
 import { uid } from "uid"
 
@@ -37,7 +37,7 @@ class PortalUserService extends Service {
       })
       .catch((err) => {
         logger.error(`Error on getting portal_user in PortalUserService.getEntityObject: ${err.message}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return undefined
@@ -50,7 +50,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.list: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -68,7 +68,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.profile: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -98,7 +98,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.upsert: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -123,7 +123,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.inviteNewPortalUser: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -150,7 +150,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.archive: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -168,7 +168,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.restore: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -186,7 +186,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.toggleIsAdmin: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -204,7 +204,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.delete: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -225,7 +225,7 @@ class PortalUserService extends Service {
       const { valid, errors } = validator(args, schema.login)
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.login: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -247,7 +247,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.refreshToken: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -276,7 +276,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.forgotPassword: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -310,7 +310,7 @@ class PortalUserService extends Service {
             .then((response) => resolve({ data: response }))
             .catch((err) => {
               logger.error(err, {
-                service: ServiceName.PORTAL_USER,
+                service: ModuleName.PORTAL_USER,
                 dest: PortalUserService.destination + ":forgotPassword",
               })
               return reject({ errCode: 1017 })
@@ -326,7 +326,7 @@ class PortalUserService extends Service {
 
       if (!valid) {
         logger.warn(`Validation has error on PortalUserService.resetPassword: ${errors}`, {
-          service: ServiceName.PORTAL_USER,
+          service: ModuleName.PORTAL_USER,
           dest: PortalUserService.destination,
         })
         return reject({ errors })
@@ -364,7 +364,7 @@ class PortalUserService extends Service {
         logger.error(
           `Error on getting portal_user in PortalUserService.getPortalUserObject: ${err.message}`,
           {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserService.destination,
           }
         )

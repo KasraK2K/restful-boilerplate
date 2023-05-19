@@ -1,9 +1,8 @@
 // ─── MODULES ─────────────────────────────────────────────────────────────────
 import logger from "../../../common/helpers/logger.helper"
 import mailgunJs from "../../../integrations/mailgun"
-import { ServiceName } from "../../../common/enums/general.enum"
+import { ModuleName } from "../../../common/enums/general.enum"
 import { IDefaultArgs } from "../../../common/interfaces/general.interface"
-import resellerService from "../../resellers/service"
 // import util from "util"
 
 const listOfAdminToResiveEmail = ["development", "localhost"].includes(String(process.env.NODE_ENV))
@@ -34,18 +33,18 @@ class EmailLogic {
       password,
     } = args
 
-    let reseller_name: string | null = ""
-    if (reseller_id)
-      await resellerService
-        .list({ id: reseller_id })
-        .then((result) => (reseller_name = result.data[0].name))
-        .catch((error) => {
-          logger.warn(`Error on sending email:inviteNewUser ${error}`, {
-            service: ServiceName.EMAIL,
-            dest: EmailLogic.destination,
-          })
-          return
-        })
+    const reseller_name: string | null = ""
+    // if (reseller_id)
+    //   await resellerService
+    //     .list({ id: reseller_id })
+    //     .then((result) => (reseller_name = result.data[0].name))
+    //     .catch((error) => {
+    //       logger.warn(`Error on sending email:inviteNewUser ${error}`, {
+    //         service: ModuleName.EMAIL,
+    //         dest: EmailLogic.destination,
+    //       })
+    //       return
+    //     })
 
     const html = /* HTML */ `
       <p>Dear ${first_name}</p>
@@ -78,14 +77,14 @@ class EmailLogic {
       })
       .then((response) =>
         logger.info(`Password is sent to new user (${id}) with email (${email})`, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewUser",
           response,
         })
       )
       .catch((err) =>
         logger.error(err, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewUser",
         })
       )
@@ -111,14 +110,14 @@ class EmailLogic {
       })
       .then((response) =>
         logger.info(`Password is sent to new portal user (${id}) with email (${email})`, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewPortalUser",
           response,
         })
       )
       .catch((err) =>
         logger.error(err, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewUser",
         })
       )
@@ -144,14 +143,14 @@ class EmailLogic {
       })
       .then((response) =>
         logger.info(`Password is sent to new user (${id}) with email (${email})`, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewReseller",
           response,
         })
       )
       .catch((err) =>
         logger.error(err, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":inviteNewReseller",
         })
       )
@@ -173,14 +172,14 @@ class EmailLogic {
       })
       .then((response) =>
         logger.info(`Reply is sent to (${email})`, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":replyFeedback",
           response,
         })
       )
       .catch((err) =>
         logger.error(err, {
-          service: ServiceName.EMAIL,
+          service: ModuleName.EMAIL,
           dest: EmailLogic.destination + ":replyFeedback",
         })
       )

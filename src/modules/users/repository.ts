@@ -2,7 +2,7 @@
 import Repository from "../../base/repository/Repository"
 import logger from "../../common/helpers/logger.helper"
 import { IDefaultArgs } from "../../common/interfaces/general.interface"
-import { ServiceName } from "../../common/enums/general.enum"
+import { ModuleName } from "../../common/enums/general.enum"
 import { UserType } from "./constant/enum"
 import { IUserListArgs } from "./constant/interface"
 
@@ -18,7 +18,7 @@ class UserRepository extends Repository {
         .exec({ omits: ["password"] })
         .then((result) => resolve(result))
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":list" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":list" })
           return reject(err)
         })
     })
@@ -58,7 +58,7 @@ class UserRepository extends Repository {
           return result.rows.length ? resolve(result.rows) : resolve([])
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":list" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":list" })
           return reject(err)
         })
     })
@@ -74,7 +74,7 @@ class UserRepository extends Repository {
           return result.length ? resolve(result[0]) : resolve({})
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":profile" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":profile" })
           return reject(err)
         })
     })
@@ -90,7 +90,7 @@ class UserRepository extends Repository {
           return result.length ? resolve(result[0]) : resolve(null)
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":upsert" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":upsert" })
           return reject(err)
         })
     })
@@ -114,7 +114,7 @@ class UserRepository extends Repository {
           return result.rows.length ? resolve(result.rows[0]) : resolve(null)
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":archive" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":archive" })
           return reject(err)
         })
     })
@@ -138,7 +138,7 @@ class UserRepository extends Repository {
           return result.rows.length ? resolve(result.rows[0]) : resolve(null)
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":restore" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":restore" })
           return reject(err)
         })
     })
@@ -161,7 +161,7 @@ class UserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.USER,
+            service: ModuleName.USER,
             dest: UserRepository.destination + ":toggleIsBlocked",
           })
           return reject(err)
@@ -180,7 +180,7 @@ class UserRepository extends Repository {
           return result.rows.length ? resolve(result.rows[0]) : resolve(null)
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":delete" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":delete" })
           return reject(err)
         })
     })
@@ -198,7 +198,7 @@ class UserRepository extends Repository {
           return result.rows.length ? resolve(result.rows[0]) : resolve(null)
         })
         .catch(async (err) => {
-          logger.error(err, { service: ServiceName.USER, dest: UserRepository.destination + ":getExistUser" })
+          logger.error(err, { service: ModuleName.USER, dest: UserRepository.destination + ":getExistUser" })
           return reject(err)
         })
     })

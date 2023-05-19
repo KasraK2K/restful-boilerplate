@@ -5,7 +5,7 @@ import config from "config"
 import { ILoggerConfig } from "../../../config/config.interface"
 import DailyRotateFile from "winston-daily-rotate-file"
 import deleteFile from "../utils/deleteFile.util"
-import { ServiceName } from "../enums/general.enum"
+import { ModuleName } from "../enums/general.enum"
 
 /* -------------------------------- Constants ------------------------------- */
 const loggerConfig: ILoggerConfig = config.get("logger")
@@ -66,7 +66,7 @@ const jsonLogFileFormat =
 const logger = createLogger({
   level: logLevel,
   format: jsonLogFileFormat,
-  defaultMeta: { service: ServiceName.DEFAULT },
+  defaultMeta: { service: ModuleName.DEFAULT },
   transports: loggerConfig.logOnFile ? [errorTransport, combinedTransport] : [],
   // exceptionHandlers: any
   // rejectionHandlers: any

@@ -1,5 +1,5 @@
 import fs from "fs"
-import { ServiceName } from "../enums/general.enum"
+import { ModuleName } from "../enums/general.enum"
 import logger from "../helpers/logger.helper"
 
 interface IDeleteFile {
@@ -9,7 +9,7 @@ interface IDeleteFile {
 
 export const deleteFile = (
   filePath: string,
-  options: IDeleteFile = { service: ServiceName.DEFAULT, dest: "deleteFile.util.ts" }
+  options: IDeleteFile = { service: ModuleName.DEFAULT, dest: "deleteFile.util.ts" }
 ) => {
   const { service, dest } = options
 

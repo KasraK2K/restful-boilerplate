@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./build/src/server.js",
     "build": "rimraf ./build && cross-env NODE_ENV=production tsc",
-    "start:local": "cross-env NODE_ENV=local ts-node-dev --poll ./run.ts",
+    "start:local": "cross-env NODE_ENV=localhost ts-node-dev --poll ./run.ts",
     "start:dev": "cross-env NODE_ENV=development ts-node-dev --poll ./run.ts",
     "build:dev": "rimraf ./build && cross-env NODE_ENV=development webpack -- --color",
     "test": "jest",

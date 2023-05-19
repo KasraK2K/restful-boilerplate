@@ -1,6 +1,6 @@
 import { sign, decode, verify, JwtPayload, SignOptions, DecodeOptions } from "jsonwebtoken"
 import logger from "../helpers/logger.helper"
-import { ServiceName } from "../enums/general.enum"
+import { ModuleName } from "../enums/general.enum"
 import _ from "lodash"
 
 export interface IJwtVerify {
@@ -23,7 +23,7 @@ class Jwt {
     verify(token, String(process.env.JWT_SECRET), (err, decoded) => {
       if (err) {
         returnValue.valid = false
-        logger.warn(err.message, { service: ServiceName.DEFAULT, dest: "jwt.util.ts" })
+        logger.warn(err.message, { service: ModuleName.DEFAULT, dest: "jwt.util.ts" })
       } else {
         returnValue.valid = true
         returnValue.data = {}

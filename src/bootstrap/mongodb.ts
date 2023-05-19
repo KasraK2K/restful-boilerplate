@@ -12,7 +12,7 @@ import { MongoClient } from "mongodb"
 import config from "config"
 import { IMongodbConfig } from "../../config/config.interface"
 import logger from "../common/helpers/logger.helper"
-import { ServiceName } from "../common/enums/general.enum"
+import { ModuleName } from "../common/enums/general.enum"
 
 const mongodbConfig: IMongodbConfig = config.get("database.mongodb")
 
@@ -22,7 +22,7 @@ mongoClient
   .on("connect", () => console.log("MongoDB connected"))
   .on("close", () => console.log("MongoDB connection closed"))
   .on("error", (err) => {
-    logger.error(err.message, { service: ServiceName.DEFAULT, dest: "mongodb.ts" })
+    logger.error(err.message, { service: ModuleName.DEFAULT, dest: "mongodb.ts" })
     process.exit(1)
   })
 

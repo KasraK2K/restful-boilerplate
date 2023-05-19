@@ -2,7 +2,7 @@
 import Repository from "../../base/repository/Repository"
 import logger from "../../common/helpers/logger.helper"
 import { IDefaultArgs } from "../../common/interfaces/general.interface"
-import { ServiceName } from "../../common/enums/general.enum"
+import { ModuleName } from "../../common/enums/general.enum"
 import { IPortalUserListArgs } from "./constant/interface"
 
 class PortalUserRepository extends Repository {
@@ -35,7 +35,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":list",
           })
           return reject(err)
@@ -51,7 +51,7 @@ class PortalUserRepository extends Repository {
       //     resolve(result)})
       //   .catch(async (err) => {
       //     logger.error(err, {
-      //       service: ServiceName.PORTAL_USER,
+      //       service: ModuleName.PORTAL_USER,
       //       dest: PortalUserRepository.destination + ":list",
       //     })
       //     return reject(err)
@@ -70,7 +70,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":profile",
           })
           return reject(err)
@@ -89,7 +89,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":upsert",
           })
           return reject(err)
@@ -116,7 +116,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":archive",
           })
           return reject(err)
@@ -143,7 +143,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":restore",
           })
           return reject(err)
@@ -168,7 +168,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":toggleIsAdmin",
           })
           return reject(err)
@@ -188,7 +188,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":delete",
           })
           return reject(err)
@@ -218,7 +218,7 @@ class PortalUserRepository extends Repository {
         })
         .catch(async (err) => {
           logger.error(err, {
-            service: ServiceName.PORTAL_USER,
+            service: ModuleName.PORTAL_USER,
             dest: PortalUserRepository.destination + ":getExistPortalUser",
           })
           return reject(err)
